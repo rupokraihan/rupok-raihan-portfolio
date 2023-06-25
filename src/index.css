@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  background-image: linear-gradient(to bottom right, #blue-500, #purple-500);
+}
+.my-container{
+  @apply px-4 py-2 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-20 lg:py-4
+}
+
+.my-btn{
+  @apply inline-flex items-center h-12 px-6 mb-3 font-semibold text-white tracking-widest  transition duration-200 rounded shadow-md  md:mb-0 bg-blue-600 hover:bg-gray-600
+}
+

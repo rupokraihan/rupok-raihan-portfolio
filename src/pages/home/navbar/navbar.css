@@ -1,0 +1,64 @@
+.animate-gradient {
+  background-size: 300%;
+  -webkit-animation: animatedgradient 6s ease infinite alternate;
+  -moz-animation: animatedgradient 6s ease infinite alternate;
+  animation: animatedgradient 6s ease infinite alternate;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.active {
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #9306F4;
+  transition-property: color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  position: relative;
+  display: inline-block;
+}
+.active:hover {
+  color: #8a63ff;
+}
+
+.default {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  transition-property: color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  position: relative;
+  display: inline-block;
+}
+.default:hover {
+  color: #8a63ff;
+}
+
+
+.active::after,
+.default::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #8a63ff ; /* Replace with your desired color */
+  transform: scaleX(0);
+  transition: transform 0.4s ease-in-out;
+}
+
+.active:hover::after,
+.default:hover::after {
+  transform: scaleX(1);
+}
