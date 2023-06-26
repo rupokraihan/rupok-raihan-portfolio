@@ -18,9 +18,8 @@
 }
 
 .active {
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.06em;
-  color: #9306F4;
   transition-property: color;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;

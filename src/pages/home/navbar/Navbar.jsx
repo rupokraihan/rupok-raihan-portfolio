@@ -1,33 +1,38 @@
 import React, { useState } from 'react';
 import "./navbar.css"
 import logo from "../../../assets/logo/logo.png"
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { XMarkIcon, Bars3BottomRightIcon } from "@heroicons/react/24/solid";
+import { Link, Element } from "react-scroll";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div className="my-container">
       <div>
-        <div className="text-lg pt-2 pb-3  mx-auto  w-full">
+        <div className="text-lg pt-2 pb-8 lg:pb-3  mx-auto  w-full">
           <div>
-            <div className=" flex items-center justify-between px-3 mx-auto">
-              <div className="flex items-center gap-4 ">
+            <div className=" flex items-center justify-between lg:px-3 mx-auto">
+              <div className="flex items-center gap-3 ">
                 {/*Website logo */}
                 <div>
-                  <img className="h-[60px] w-[80px]" src={logo} alt="" />
+                  <img
+                    className="h-[45px] w-[50px] lg:h-[60px] lg:w-[70px]"
+                    src={logo}
+                    alt=""
+                  />
                 </div>
 
                 <div>
                   <Link to="/" className="inline-flex items-center ">
-                    <h2 class="text-4xl font-bold bg-gradient-to-r from-sky-400 via-purple-500 to-blue-400 text-transparent bg-clip-text animate-gradient">
+                    <h2 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-sky-400 via-purple-500 to-blue-400 text-transparent bg-clip-text animate-gradient">
                       Rupok Raihan
                     </h2>
                   </Link>
                 </div>
               </div>
 
-              <ul className="items-center  text-ellipsis hidden space-x-8 lg:flex">
+              <ul className="items-center  text-ellipsis hidden space-x-5 lg:flex">
                 <li>
                   <NavLink
                     to="/"
@@ -39,13 +44,16 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink
-                    to="a"
-                    className={({ isActive }) =>
-                      isActive ? "active" : "default"
-                    }
-                  >
-                    About
+                  <NavLink >
+                    <Link
+                      to="about"
+                      spy={true}
+                      smooth={true}
+                      offset={-70}
+                      duration={800}
+                    >
+                      About
+                    </Link>
                   </NavLink>
                 </li>
                 <li>
@@ -88,10 +96,6 @@ const Navbar = () => {
                     Contact
                   </NavLink>
                 </li>
-
-               
-
-                
               </ul>
 
               {/* Mobile Navbar Section */}
@@ -163,7 +167,6 @@ const Navbar = () => {
                               Classes
                             </Link>
                           </li>
-                          
                         </ul>
                       </nav>
                     </div>
