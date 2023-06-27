@@ -1,0 +1,24 @@
+.skill-box {
+  border: 1px solid #8a63ff;
+  border-radius: 0.25rem;
+  padding: 1rem;
+}
+
+.skill-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, .5);
+}
+
+.skill-icon {
+  height: 4rem;
+  width: 4rem;
+  margin: 0 auto 1rem;
+}
+
+.skill-name {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+
+}

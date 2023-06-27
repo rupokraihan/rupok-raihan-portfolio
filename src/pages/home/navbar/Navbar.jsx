@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import "./navbar.css"
-import logo from "../../../assets/logo/logo.png"
-import { NavLink } from 'react-router-dom';
+import React, { useState } from "react";
+import "./navbar.css";
+import logo from "../../../assets/logo/logo.png";
+import { NavLink } from "react-router-dom";
 import { XMarkIcon, Bars3BottomRightIcon } from "@heroicons/react/24/solid";
 import { Link, Element } from "react-scroll";
 
@@ -44,12 +44,12 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink >
+                  <NavLink>
                     <Link
                       to="about"
                       spy={true}
                       smooth={true}
-                      offset={-70}
+                      offset={-100}
                       duration={800}
                     >
                       About
@@ -57,43 +57,55 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink
-                    to="a"
-                    className={({ isActive }) =>
-                      isActive ? "active" : "default"
-                    }
-                  >
-                    Skills
+                  <NavLink>
+                    <Link
+                      to="skills"
+                      spy={true}
+                      smooth={true}
+                      offset={-100}
+                      duration={800}
+                    >
+                      Skills
+                    </Link>
                   </NavLink>
                 </li>
                 <li>
                   <NavLink
-                    to="a"
                     className={({ isActive }) =>
                       isActive ? "active" : "default"
                     }
+                    to={
+                      "https://drive.google.com/file/d/1yJ1LH8ylBQG_tRNB64maRQCyl8SyETHI/view?usp=sharing"
+                    }
+                    target="_blank"
                   >
                     Resume
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink
-                    to="a"
-                    className={({ isActive }) =>
-                      isActive ? "active" : "default"
-                    }
-                  >
-                    Projects
+                  <NavLink>
+                    <Link
+                      to="projects"
+                      spy={true}
+                      smooth={true}
+                      offset={-100}
+                      duration={800}
+                    >
+                      Projects
+                    </Link>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink
-                    to="a"
-                    className={({ isActive }) =>
-                      isActive ? "active" : "default"
-                    }
-                  >
-                    Contact
+                  <NavLink>
+                    <Link
+                      to="contact"
+                      spy={true}
+                      smooth={true}
+                      offset={-100}
+                      duration={800}
+                    >
+                      Contact
+                    </Link>
                   </NavLink>
                 </li>
               </ul>

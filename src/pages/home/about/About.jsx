@@ -1,6 +1,8 @@
 import React from "react";
+import "./about.css"
 import photo from "../../../assets/my-photo/photo (2).jpg"
-import { Link, Element } from "react-scroll";
+import { Element } from "react-scroll";
+
 
 const About = () => {
   return (
@@ -21,6 +23,7 @@ const About = () => {
             handle the back-end operations. I am a diligent worker and have the
             ability to work well with others.
           </p>
+          
         </div>
         <div className="">
           <img className="rounded-xl" src={photo} alt="" />
