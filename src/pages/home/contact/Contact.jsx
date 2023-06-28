@@ -50,7 +50,20 @@ const Contact = () => {
 
   return (
     <Element className="my-container" name="contact">
-      <div>This is contact section</div>
+      <div>
+        <h1 className="text-5xl tracking-wider font-bold   text-center mb-2 mt-10">
+          Contact
+          <span className="bg-gradient-to-r from-sky-400 via-purple-500 to-blue-400 text-transparent bg-clip-text animate-gradient ml-2">
+            Me
+          </span>
+        </h1>
+
+        <div className="flex justify-center mb-16 ">
+          <span className="tracking-wider text-xl font-semibold rounded-lg bg-gradient-to-r from-sky-400 via-purple-500 to-blue-400 text-transparent bg-clip-text animate-gradient ml-2">
+            Get In Touch
+          </span>
+        </div>
+      </div>
 
       <div className="lg:grid grid-cols-5 gap-10">
         <div className="col-span-2 my-auto">

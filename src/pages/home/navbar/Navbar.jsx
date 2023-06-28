@@ -49,7 +49,7 @@ const Navbar = () => {
                       to="about"
                       spy={true}
                       smooth={true}
-                      offset={-100}
+                      offset={0}
                       duration={800}
                     >
                       About
@@ -62,7 +62,7 @@ const Navbar = () => {
                       to="skills"
                       spy={true}
                       smooth={true}
-                      offset={-100}
+                      offset={0}
                       duration={800}
                     >
                       Skills
@@ -88,7 +88,7 @@ const Navbar = () => {
                       to="projects"
                       spy={true}
                       smooth={true}
-                      offset={-100}
+                      offset={60}
                       duration={800}
                     >
                       Projects
@@ -101,7 +101,7 @@ const Navbar = () => {
                       to="contact"
                       spy={true}
                       smooth={true}
-                      offset={-100}
+                      offset={0}
                       duration={800}
                     >
                       Contact

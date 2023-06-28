@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="my-container text-gray-800 relative bottom-0 left-0">
+    <footer className="my-container mt-6 text-gray-800 relative bottom-0 left-0">
       <hr className="border-1 bg-[#8a63ff] border-[#8a63ff] shadow-lg" />
       <div className="pt-6 text-lg font-semibold text-center text-gray-300 tracking-wider">
         © 2023 All Rights Reserved and Created by{" "}

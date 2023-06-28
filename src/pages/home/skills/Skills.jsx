@@ -33,8 +33,11 @@ const Skills = () => {
   return (
     <Element className="my-container" name="skills">
       <div className="">
-        <h1 className="text-4xl font-bold bg-gradient-to-r from-sky-400 via-purple-500 to-blue-400 text-transparent bg-clip-text animate-gradient mb-12">
-          Skills
+        <h1 className="text-5xl tracking-wider font-bold  mb-16 text-center">
+          My
+          <span className="bg-gradient-to-r from-sky-400 via-purple-500 to-blue-400 text-transparent bg-clip-text animate-gradient ml-2">
+            Skills
+          </span>
         </h1>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {skillsData.map((skill) => (
