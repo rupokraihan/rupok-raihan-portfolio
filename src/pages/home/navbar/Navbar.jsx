@@ -3,7 +3,7 @@ import "./navbar.css";
 import logo from "../../../assets/logo/logo.png";
 import { NavLink } from "react-router-dom";
 import { XMarkIcon, Bars3BottomRightIcon } from "@heroicons/react/24/solid";
-import { Link, Element } from "react-scroll";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

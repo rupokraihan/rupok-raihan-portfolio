@@ -19,6 +19,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
+    "react-modal": "^3.16.1",
     "react-particles": "^2.10.1",
     "react-router-dom": "^6.14.0",
     "react-scroll": "^1.8.9",
@@ -26,6 +27,7 @@
     "react-tsparticles": "^2.10.1",
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.7.12",
+    "swiper": "^9.4.1",
     "tsparticles": "^2.10.1"
   },
   "devDependencies": {
