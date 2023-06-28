@@ -3,9 +3,8 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import CraftedShots from "./pages/all projects/Crafted Shots/CraftedShots.jsx";
-import ToyHavenVille from "./pages/all projects/toyHaven Ville/ToyHavenVille.jsx";
-import FlavorsOfMexico from "./pages/all projects/Flavors of Mexico/FlavorsOfMexico.jsx";
+import MoreAbout from "./pages/home/about/MoreAbout.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -13,17 +12,10 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "crafted-shots",
-    element: <CraftedShots/>
-  },
-  {
-    path: "toyhaven-ville",
-    element: <ToyHavenVille/>
-  },
-  {
-    path: "flavors-of-mexico",
-    element: <FlavorsOfMexico/>
-  },
+    path: "about-me",
+    element:<MoreAbout/>
+  }
+ 
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

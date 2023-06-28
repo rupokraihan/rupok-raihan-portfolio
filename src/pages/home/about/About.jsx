@@ -37,7 +37,7 @@ const About = () => {
             handle the back-end operations. I am a diligent worker and have the
             ability to work well with others.
           </p>
-          <Link>
+          <Link to={"about-me"}>
             <button className="more-about flex justify-center items-center">
               More About Me
               <ArrowLongRightIcon className="w-6 ml-1 mt-[4px]" />

@@ -1,52 +1,39 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./projects.css";
 import { Element } from "react-scroll";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper";
-import "swiper/css";
-import "swiper/css/pagination";
 import craftedShots from "../../../assets/projects/crafted-shots.png";
 import maxicanChef from "../../../assets/projects/mexican-chef.png";
 import toyHaven from "../../../assets/projects/toy-haven.png";
 import { Link } from "react-router-dom";
-import Modal from "react-modal";
-import CraftedShots from "../../all projects/Crafted Shots/CraftedShots";
-import ToyHavenVille from "../../all projects/toyHaven Ville/ToyHavenVille";
-import FlavorsOfMexico from "../../all projects/Flavors of Mexico/FlavorsOfMexico";
-
-Modal.setAppElement("#root");
+import { FaEye, FaGithub } from "react-icons/fa";
 
 const Projects = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [isHovered1, setIsHovered1] = useState(false);
+  const [isHovered2, setIsHovered2] = useState(false);
+  const [isHovered3, setIsHovered3] = useState(false);
 
-  useEffect(() => {
-    if (modalOpen) {
-      document.body.classList.add("modal-open");
-    } else {
-      document.body.classList.remove("modal-open");
-    }
-  }, [modalOpen]);
-
-  const handleViewDetails = (project) => {
-    setSelectedProject(project);
-    setModalOpen(true);
+  const handleMouseEnter1 = () => {
+    setIsHovered1(true);
   };
 
-  const closeModal = () => {
-    setSelectedProject(null);
-    setModalOpen(false);
+  const handleMouseLeave1 = () => {
+    setIsHovered1(false);
   };
 
-  const renderSelectedComponent = () => {
-    if (selectedProject === "crafted-shots") {
-      return <CraftedShots />;
-    } else if (selectedProject === "toyhaven-ville") {
-      return <ToyHavenVille />;
-    } else if (selectedProject === "flavors-of-mexico") {
-      return <FlavorsOfMexico />;
-    }
-    return null;
+  const handleMouseEnter2 = () => {
+    setIsHovered2(true);
+  };
+
+  const handleMouseLeave2 = () => {
+    setIsHovered2(false);
+  };
+
+  const handleMouseEnter3 = () => {
+    setIsHovered3(true);
+  };
+
+  const handleMouseLeave3 = () => {
+    setIsHovered3(false);
   };
 
   return (
@@ -59,219 +46,163 @@ const Projects = () => {
           </span>
         </h1>
       </div>
-
-      <div className="hidden sm:block">
-        <div className="swiper-container">
-          <Swiper
-            slidesPerView={3}
-            spaceBetween={30}
-            centeredSlides={true}
-            modules={[Pagination, Autoplay]}
-            className="pb-12"
-            autoplay={{ delay: 2500 }}
-            pagination={{
-              clickable: true,
-            }}
-          >
-            <SwiperSlide>
-              <div className="project-box">
-                <div class="image-wrap">
-                  <img src={craftedShots} />
-                </div>
-                <h2 className="project-title">Crafted Shots</h2>
-                <div className="flex justify-between mt-6 mb-3">
-                  <a
-                    className="project-link"
-                    href="https://crafted-shots.web.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Live Site
-                  </a>
-                  <button
-                    className="project-link"
-                    onClick={() => handleViewDetails("crafted-shots")}
-                  >
-                    View Details
-                  </button>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="project-box">
-                <div class="image-wrap">
-                  <img src={toyHaven} />
-                </div>
-                <h2 className="project-title">toyHaven Ville</h2>
-                <div className="flex justify-between mt-6 mb-3">
-                  <a
-                    className="project-link"
-                    href="https://toy-haven-ville.web.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Live Site
-                  </a>
-                  <button
-                    className="project-link"
-                    onClick={() => handleViewDetails("toyhaven-ville")}
-                  >
-                    View Details
-                  </button>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="project-box">
-                <div class="image-wrap">
-                  <img src={maxicanChef} />
-                </div>
-                <h2 className="project-title">Flavors of Mexico</h2>
-                <div className="flex justify-between mt-6 mb-3">
-                  <a
-                    className="project-link"
-                    href="https://mexican-chef-recipe-hunter.web.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Live Site
-                  </a>
-                  <button
-                    className="project-link"
-                    onClick={() => handleViewDetails("flavors-of-mexico")}
-                  >
-                    View Details
-                  </button>
-                </div>
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </div>
-
-        <Modal
-          isOpen={modalOpen}
-          onRequestClose={closeModal}
-          className="modal"
-          overlayClassName="modal-overlay"
-        >
-          <div className="modal-content">
-            <h2>Project Details</h2>
-            <p>Project: {selectedProject}</p>
-            {renderSelectedComponent()}
-            <button className="close-button" onClick={closeModal}>
-              Close
-            </button>
-          </div>
-        </Modal>
-      </div>
-
-      {/* for mobile device */}
-      <div className="lg:hidden">
+      <div className="lg:grid grid-cols-3 gap-8">
+        {/* 1 */}
         <div>
-          
+          <div
+            className="project-box relative"
+            onMouseEnter={handleMouseEnter1}
+            onMouseLeave={handleMouseLeave1}
+          >
+            <div className="image-wrap">
+              <img src={craftedShots} alt="Crafted Shots" />
+              {isHovered1 ? (
+                <div className="project-details text-overlay bg-slate-800">
+                  <p className="mt-2 font-medium tracking-wider px-2">
+                    <span className="font-bold text-fuchsia-300 text-lg mr-2">
+                      Technologies:
+                    </span>
+                    ReactJs, React Router, JavaScript, Tailwind CSS, Node.js,
+                    ExpressJs, MongoDB, Firebase, Stripe.js.
+                  </p>
 
-          <div className="swiper-container">
-            <Swiper
-              slidesPerView={1}
-              spaceBetween={30}
-              centeredSlides={true}
-              modules={[Pagination, Autoplay]}
-              className="pb-12"
-              autoplay={{ delay: 2500 }}
-              pagination={{
-                clickable: true,
-              }}
-            >
-              <SwiperSlide className="px-4">
-                <div className="project-box">
-                  <div class="image-wrap">
-                    <img src={craftedShots} />
-                  </div>
-                  <h2 className="project-title">Crafted Shots</h2>
-                  <div className="flex justify-between mt-6 mb-3">
+                  <div className="flex items-center justify-center gap-4 mt-4">
                     <a
-                      className="project-link"
+                      className="project-live flex gap-2 items-center"
                       href="https://crafted-shots.web.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Live Site
+                      <FaEye />
+                      <span>Live Site</span>
                     </a>
-                    <button
-                      className="project-link"
-                      onClick={() => handleViewDetails("crafted-shots")}
+                    <a
+                      className="project-git flex gap-2 items-center"
+                      href="https://github.com/rupokraihan/crafted-shots-client"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      View Details
-                    </button>
+                      <FaGithub />
+                      <span> GITHUB</span>
+                    </a>
                   </div>
                 </div>
-              </SwiperSlide>
-              <SwiperSlide className="px-4">
-                <div className="project-box">
-                  <div class="image-wrap">
-                    <img src={toyHaven} />
-                  </div>
-                  <h2 className="project-title">toyHaven Ville</h2>
-                  <div className="flex justify-between mt-6 mb-3">
+              ) : (
+                <div className="text-overlay bg-slate-600">
+                  <h2 className="project-title">Crafted Shots</h2>
+                  <p className="px-2 font-medium tracking-wider">
+                    A MERN Stack photography school management website. Admin
+                    functionality has been implemented.
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* 2 */}
+        <div>
+          <div
+            className="project-box relative"
+            onMouseEnter={handleMouseEnter2}
+            onMouseLeave={handleMouseLeave2}
+          >
+            <div className="image-wrap">
+              <img src={toyHaven} alt="" />
+              {isHovered2 ? (
+                <div className="project-details text-overlay bg-slate-800">
+                  <p className="mt-2 font-medium tracking-wider px-2">
+                    <span className="font-bold text-fuchsia-300 text-lg mr-2">
+                      Technologies:
+                    </span>
+                    ReactJs, React Router, JavaScript, Tailwind CSS, Node.js,
+                    ExpressJs, MongoDB, Firebase.
+                  </p>
+
+                  <div className="flex items-center justify-center gap-4 mt-4">
                     <a
-                      className="project-link"
+                      className="project-live flex gap-2 items-center"
                       href="https://toy-haven-ville.web.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Live Site
+                      <FaEye />
+                      <span>Live Site</span>
                     </a>
-                    <button
-                      className="project-link"
-                      onClick={() => handleViewDetails("toyhaven-ville")}
+                    <a
+                      className="project-git flex gap-2 items-center"
+                      href="https://github.com/rupokraihan/toy-haven-ville-client"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      View Details
-                    </button>
+                      <FaGithub />
+                      <span> GITHUB</span>
+                    </a>
                   </div>
                 </div>
-              </SwiperSlide>
-              <SwiperSlide className="px-4">
-                <div className="project-box">
-                  <div class="image-wrap">
-                    <img src={maxicanChef} />
-                  </div>
-                  <h2 className="project-title">Flavors of Mexico</h2>
-                  <div className="flex justify-between mt-6 mb-3">
+              ) : (
+                <div className="text-overlay bg-slate-600">
+                  <h2 className="project-title">toyHaven Ville</h2>
+                  <p className="px-2 font-medium tracking-wider">
+                    A MERN stack online toy marketplace website that offers a
+                    wide range of toys for children.
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+        {/* 3 */}
+        <div>
+          <div
+            className="project-box relative"
+            onMouseEnter={handleMouseEnter3}
+            onMouseLeave={handleMouseLeave3}
+          >
+            <div className="image-wrap">
+              <img src={maxicanChef} alt="" />
+              {isHovered3 ? (
+                <div className="project-details text-overlay bg-slate-800">
+                  <p className="mt-2 font-medium tracking-wider px-2">
+                    <span className="font-bold text-fuchsia-300 text-lg mr-2">
+                      Technologies:
+                    </span>
+                    ReactJs, React Router, JavaScript, Tailwind CSS, Firebase,
+                    SwiperJS.
+                  </p>
+
+                  <div className="flex items-center justify-center gap-4 mt-4">
                     <a
-                      className="project-link"
+                      className="project-live flex gap-2 items-center"
                       href="https://mexican-chef-recipe-hunter.web.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Live Site
+                      <FaEye />
+                      <span>Live Site</span>
                     </a>
-                    <button
-                      className="project-link"
-                      onClick={() => handleViewDetails("flavors-of-mexico")}
+                    <a
+                      className="project-git flex gap-2 items-center"
+                      href="https://github.com/rupokraihan/flavors-of-mexico-client"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      View Details
-                    </button>
+                      <FaGithub />
+                      <span> GITHUB</span>
+                    </a>
                   </div>
                 </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
-
-          <Modal
-            isOpen={modalOpen}
-            onRequestClose={closeModal}
-            className="modal"
-            overlayClassName="modal-overlay"
-          >
-            <div className="modal-content">
-              <h2>Project Details</h2>
-              <p>Project: {selectedProject}</p>
-              {renderSelectedComponent()}
-              <button className="close-button" onClick={closeModal}>
-                Close
-              </button>
+              ) : (
+                <div className="text-overlay bg-slate-600">
+                  <h2 className="project-title">Flavors of Mexico</h2>
+                  <p className="px-2 font-medium tracking-wider">
+                    A React based website dedicated to showcasing the best chefs
+                    and their recipes from around the world.
+                  </p>
+                </div>
+              )}
             </div>
-          </Modal>
+          </div>
         </div>
       </div>
     </Element>
