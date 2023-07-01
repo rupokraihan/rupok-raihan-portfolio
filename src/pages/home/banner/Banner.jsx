@@ -16,7 +16,7 @@ const Banner = () => {
     loop: 0,
   });
   return (
-    <div className="my-container lg:h-screen w-full">
+    <div className="my-container lg:h-screen w-full lg:mt-16">
       <div className="lg:flex justify-between items-center">
         <div>
           <div className="text-2xl lg:text-4xl">
@@ -45,7 +45,7 @@ const Banner = () => {
         </div>
         <div className="">
           <Lottie
-            className="w-full lg:w-[500px] h-[460px]"
+            className="w-full lg:w-[600px] h-[660px]"
             animationData={animation}
             loop={true}
           />

@@ -59,7 +59,7 @@ const Contact = () => {
         </h1>
 
         <div className="flex justify-center mb-16 ">
-          <span className="tracking-wider text-xl font-semibold rounded-lg bg-gradient-to-r from-sky-400 via-purple-500 to-blue-400 text-transparent bg-clip-text animate-gradient ml-2">
+          <span className="tracking-wider text-2xl font-semibold rounded-lg bg-gradient-to-r from-sky-400 via-purple-500 to-blue-400 text-transparent bg-clip-text animate-gradient ml-2">
             Get In Touch
           </span>
         </div>

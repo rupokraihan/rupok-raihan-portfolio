@@ -24,3 +24,43 @@
 }
 
 
+.resume-view-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff4d00;
+   background-image: linear-gradient(to right, #9306F4 25%, #ffffff 20%);
+  color: black;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.resume-view-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #9306F4;
+  transition: left .8s; 
+  z-index: -1;
+}
+
+.resume-view-btn:hover::before {
+  left: 0;
+}
+
+.resume-view-btn:hover {
+  color: #ffffff;
+}
+
+

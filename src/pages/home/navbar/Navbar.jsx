@@ -117,67 +117,98 @@ const Navbar = () => {
                   aria-label="Open Menu"
                   title="Open Menu"
                   className="text-amber-600 hover:text-amber-500 focus:outline-none"
-                  onClick={() => setIsMenuOpen(true)}
+                  onClick={() => setIsMenuOpen(!isMenuOpen)} // Toggle the isMenuOpen state
                 >
-                  <Bars3BottomRightIcon className="w-8" />
+                  {isMenuOpen ? (
+                    <XMarkIcon className="w-8" />
+                  ) : (
+                    <Bars3BottomRightIcon className="w-8" />
+                  )}
                 </button>
                 {isMenuOpen && (
-                  <div className="absolute top-0 left-0 w-full">
-                    <div className=" bg-gray-800 border rounded shadow-sm">
+                  <div className="absolute top-20 left-0 w-full px-2 text-center z-10">
+                    <div className=" bg-gray-800 border-2 border-[#724ce3] rounded shadow-sm pb-4">
                       {/* Logo & Button section */}
                       <div className="flex items-center justify-between mb-4">
-                        <div className="flex gap-2">
-                          <Link to="/" className="inline-flex items-center">
-                            <img
-                              className="h-[72px] w-[140px] ml-2"
-                              src={logo}
-                              alt=""
-                            />
-                          </Link>
-                          <h1 className="text-amber-400 font-bold text-3xl flex items-center">
-                            Crafted Shots
-                          </h1>
-                        </div>
                         {/* Dropdown menu close button */}
-                        <div>
-                          <button
-                            type="button"
-                            className="text-amber-600 hover:text-amber-500 focus:outline-none"
-                            onClick={() => setIsMenuOpen(false)}
-                          >
-                            <XMarkIcon className="w-8 mt-4 mr-3" />
-                          </button>
-                        </div>
                       </div>
                       {/* Mobile Nav Items Section */}
                       <nav>
                         <ul className="space-y-2">
                           <li>
-                            <Link
+                            <NavLink
                               to="/"
-                              className="block
-                             px-4 font-semibold  text-amber-400 hover:text-amber-500"
+                              className={({ isActive }) =>
+                                isActive ? "active" : "default"
+                              }
                             >
                               Home
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
-                              to="instructors"
-                              className="block
-                             px-4 font-semibold  text-amber-400 hover:text-amber-500"
-                            >
-                              Instructors
-                            </Link>
+                            <NavLink>
+                              <Link
+                                to="about"
+                                spy={true}
+                                smooth={true}
+                                offset={0}
+                                duration={800}
+                              >
+                                About
+                              </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
-                              to="/classes"
-                              className="block
-                             px-4 font-semibold  text-amber-400 hover:text-amber-500"
+                            <NavLink>
+                              <Link
+                                to="skills"
+                                spy={true}
+                                smooth={true}
+                                offset={0}
+                                duration={800}
+                              >
+                                Skills
+                              </Link>
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              className={({ isActive }) =>
+                                isActive ? "active" : "default"
+                              }
+                              to={
+                                "https://drive.google.com/file/d/1yJ1LH8ylBQG_tRNB64maRQCyl8SyETHI/view?usp=sharing"
+                              }
+                              target="_blank"
                             >
-                              Classes
-                            </Link>
+                              Resume
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink>
+                              <Link
+                                to="projects"
+                                spy={true}
+                                smooth={true}
+                                offset={60}
+                                duration={800}
+                              >
+                                Projects
+                              </Link>
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink>
+                              <Link
+                                to="contact"
+                                spy={true}
+                                smooth={true}
+                                offset={0}
+                                duration={800}
+                              >
+                                Contact
+                              </Link>
+                            </NavLink>
                           </li>
                         </ul>
                       </nav>
