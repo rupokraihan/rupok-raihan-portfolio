@@ -1,6 +1,6 @@
 import React from "react";
 import "./about.css"
-import photo from "../../../assets/my-photo/photo (2).jpg"
+import photo from "../../../assets/my-photo/photo.jpg"
 import { Button, Element } from "react-scroll";
 import { Link } from "react-router-dom";
 import { ArrowLongRightIcon} from "@heroicons/react/24/solid";
