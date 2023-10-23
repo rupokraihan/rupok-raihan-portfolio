@@ -16,7 +16,12 @@ const Banner = () => {
     loop: 0,
   });
   return (
-    <div className="my-container lg:h-screen w-full lg:mt-16">
+    <div
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500"
+      className="my-container lg:h-screen w-full lg:mt-16"
+    >
       <div className="lg:flex justify-between items-center">
         <div>
           <div className="text-2xl lg:text-4xl">

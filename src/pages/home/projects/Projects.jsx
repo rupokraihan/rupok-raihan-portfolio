@@ -37,8 +37,13 @@ const Projects = () => {
   };
 
   return (
-    <Element className="my-container" name="projects">
-      <div>
+    <Element name="projects" className="my-container">
+      <div
+        data-aos="zoom-in"
+        data-aos-easing="linear"
+        data-aos-duration="1500"
+        className="mt-12"
+      >
         <h1 className="text-5xl tracking-wider font-bold  text-center mb-16 mt-16">
           Recent
           <span className="bg-gradient-to-r from-sky-400 via-purple-500 to-blue-400 text-transparent bg-clip-text animate-gradient ml-2">
@@ -46,7 +51,12 @@ const Projects = () => {
           </span>
         </h1>
       </div>
-      <div className="lg:grid grid-cols-3 gap-8">
+      <div
+        data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="1500"
+        className="lg:grid grid-cols-3 gap-8"
+      >
         {/* 1 */}
         <div>
           <div

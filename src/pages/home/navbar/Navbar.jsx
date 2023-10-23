@@ -116,7 +116,7 @@ const Navbar = () => {
                 <button
                   aria-label="Open Menu"
                   title="Open Menu"
-                  className="text-amber-600 hover:text-amber-500 focus:outline-none"
+                  className="text-purple-500 focus:outline-none"
                   onClick={() => setIsMenuOpen(!isMenuOpen)} // Toggle the isMenuOpen state
                 >
                   {isMenuOpen ? (

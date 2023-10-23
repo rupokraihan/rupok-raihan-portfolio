@@ -50,7 +50,7 @@ const Contact = () => {
 
   return (
     <Element className="my-container" name="contact">
-      <div>
+      <div data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1500">
         <h1 className="text-5xl tracking-wider font-bold   text-center mb-2 mt-10">
           Contact
           <span className="bg-gradient-to-r from-sky-400 via-purple-500 to-blue-400 text-transparent bg-clip-text animate-gradient ml-2">
@@ -65,7 +65,12 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="lg:grid grid-cols-5 gap-10">
+      <div
+        data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="1500"
+        className="lg:grid grid-cols-5 gap-10"
+      >
         <div className="col-span-2 my-auto">
           <div className="flex gap-3 items-center mb-8">
             <div className="rounded-full border-2 border-[#8a63ff] p-3">
