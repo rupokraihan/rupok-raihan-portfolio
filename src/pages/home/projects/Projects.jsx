@@ -11,6 +11,7 @@ const Projects = () => {
   const [isHovered1, setIsHovered1] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
   const [isHovered3, setIsHovered3] = useState(false);
+  const [isHovered4, setIsHovered4] = useState(false);
 
   const handleMouseEnter1 = () => {
     setIsHovered1(true);
@@ -34,6 +35,13 @@ const Projects = () => {
 
   const handleMouseLeave3 = () => {
     setIsHovered3(false);
+  };
+  const handleMouseEnter4 = () => {
+    setIsHovered4(true);
+  };
+
+  const handleMouseLeave4 = () => {
+    setIsHovered4(false);
   };
 
   return (
@@ -178,6 +186,58 @@ const Projects = () => {
                       Technologies:
                     </span>
                     ReactJs, React Router, JavaScript, Tailwind CSS, Firebase,
+                    SwiperJS.
+                  </p>
+
+                  <div className="flex items-center justify-center gap-4 mt-4">
+                    <a
+                      className="project-live flex gap-2 items-center"
+                      href="https://mexican-chef-recipe-hunter.web.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaEye />
+                      <span>Live Site</span>
+                    </a>
+                    <a
+                      className="project-git flex gap-2 items-center"
+                      href="https://github.com/rupokraihan/flavors-of-mexico-client"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaGithub />
+                      <span> GITHUB</span>
+                    </a>
+                  </div>
+                </div>
+              ) : (
+                <div className="text-overlay bg-slate-600">
+                  <h2 className="project-title">Flavors of Mexico</h2>
+                  <p className="px-2 font-medium tracking-wider">
+                    A React based website dedicated to showcasing the best chefs
+                    and their recipes from around the world.
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+        {/* 4 */}
+        <div>
+          <div
+            className="project-box relative"
+            onMouseEnter={handleMouseEnter4}
+            onMouseLeave={handleMouseLeave4}
+          >
+            <div className="image-wrap">
+              <img src={maxicanChef} alt="" />
+              {isHovered4 ? (
+                <div className="project-details text-overlay bg-slate-800">
+                  <p className="mt-2 font-medium tracking-wider px-2">
+                    <span className="font-bold text-fuchsia-300 text-lg mr-2">
+                      Technologies:
+                    </span>
+                    ReactJs4, React Router, JavaScript, Tailwind CSS, Firebase,
                     SwiperJS.
                   </p>
 

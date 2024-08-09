@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import "./contact.css";
 import { Element } from "react-scroll";
-import { FaPhoneAlt, FaLocationArrow} from "react-icons/fa";
+import { FaPhoneAlt, FaLocationArrow } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import github from "../../../assets/social/github.png";
 import facebook from "../../../assets/social/facebook.png";
@@ -46,7 +46,6 @@ const Contact = () => {
         }
       );
   };
-
 
   return (
     <Element className="my-container" name="contact">
